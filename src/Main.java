@@ -5,6 +5,6 @@ public class Main {
 
 
     public static void main(String[] args) throws IOException {
-        new ParameterHandler.run(args);
+        new ParameterHandler().run(args);
     }
 }

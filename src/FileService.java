@@ -11,20 +11,18 @@ public class FileService {
     static ByteBuffer byteBuffer = ByteBuffer.allocate(30);
     static Coding enCoding = new Coding();
 
-    public static class work {
-        public work(Path inputFile, Path outputFile, int key) throws IOException {
-            inputChannel = FileChannel.open(inputFile);
-            outputChannel = FileChannel.open(outputFile, StandardOpenOption.WRITE);
+    public void work(Path inputFile, Path outputFile, int key) throws IOException {
+        inputChannel = FileChannel.open(inputFile);
+        outputChannel = FileChannel.open(outputFile, StandardOpenOption.WRITE);
 
-            while (inputChannel.read(byteBuffer) > 0) {
-                byteBuffer = enCoding.doCoding(byteBuffer, key);
-                byteBuffer.flip();
-                outputChannel.write(byteBuffer);
-                byteBuffer.clear();
-            }
-
-            inputChannel.close();
-            outputChannel.close();
+        while (inputChannel.read(byteBuffer) > 0) {
+            byteBuffer = new Coding().doCoding(byteBuffer, key);
+            byteBuffer.flip();
+            outputChannel.write(byteBuffer);
+            byteBuffer.clear();
         }
+
+        inputChannel.close();
+        outputChannel.close();
     }
 }
