@@ -5,8 +5,8 @@ public class FileConstructor {
 
     public Path FileName(Path fileName, String text){
 
-        var words = String.valueOf(fileName).split(".");
-        newFileName = fileName.getParent().resolve(Path.of(words[0] + text + words[1]));
+        var words = String.valueOf(fileName.getFileName()).split("\\.");
+        newFileName = fileName.getParent().resolve(Path.of(words[0] + text +"." + words[1]));
 
         return newFileName;
     }
