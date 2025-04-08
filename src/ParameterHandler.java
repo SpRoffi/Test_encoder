@@ -23,6 +23,7 @@ public class ParameterHandler {
             outputFile = new FileConstructor().FileName(inputFile, "[DECRYPTED]");
             marker = -1;
         } else if ("brute-force".equalsIgnoreCase(parameter[0])) {
+            new BruteForce().crypt(parameter);
             System.out.println("Sorry");
         } else {
             System.out.println("Sorry");

@@ -9,7 +9,6 @@ public class FileService {
     static FileChannel inputChannel;
     static FileChannel outputChannel;
     static ByteBuffer byteBuffer = ByteBuffer.allocate(30);
-    static Coding enCoding = new Coding();
 
     public void work(Path inputFile, Path outputFile, int key) throws IOException {
         inputChannel = FileChannel.open(inputFile);
@@ -24,6 +23,6 @@ public class FileService {
 
         inputChannel.close();
         outputChannel.close();
-
+        System.out.println("Зроблено");
     }
 }
