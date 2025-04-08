@@ -16,6 +16,7 @@ public class CLI {
         if (!"BRUTE_FORCE".equalsIgnoreCase(args[0])) {
             System.out.println("Введіть ключ");
             args[2] = scanner.nextLine();
+
         }
         new ParameterHandler().run(args);
 
