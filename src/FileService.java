@@ -15,7 +15,7 @@ public class FileService {
         outputChannel = FileChannel.open(outputFile, StandardOpenOption.WRITE);
 
         while (inputChannel.read(byteBuffer) > 0) {
-            byteBuffer = new Coding().doCoding(byteBuffer, key);
+            byteBuffer = new CharCrypt().doCryption(byteBuffer, key);
             byteBuffer.flip();
             outputChannel.write(byteBuffer);
             byteBuffer.clear();
