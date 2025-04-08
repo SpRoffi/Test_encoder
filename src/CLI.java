@@ -4,6 +4,7 @@ import java.util.Scanner;
 public class CLI {
 
     // Клас введення аргументів з консолі
+
     String [] args = new String[3];
 
     public void inputDate() throws IOException {
