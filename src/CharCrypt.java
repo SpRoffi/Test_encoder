@@ -10,7 +10,7 @@ public class CharCrypt {
     int j;
     Character character;
 
-    public ByteBuffer doCryption(ByteBuffer buffer, int k) {
+    public ByteBuffer doCrypt(ByteBuffer buffer, int k) {
         for (int i = 0; i < buffer.capacity(); i++) {
             character = (char) buffer.get(i);
 
