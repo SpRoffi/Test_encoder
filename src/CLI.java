@@ -8,7 +8,6 @@ public class CLI {
     String [] args = new String[3];
 
     public void inputDate() throws IOException {
-        Runner.marker = false;
         Scanner scanner = new Scanner(System.in);
         System.out.println("Введіть дію (ENCRYPT, DECRYPT або BRUTE_FORCE");
         args[0] = scanner.nextLine();
